@@ -46,7 +46,7 @@ const StyledDiv = styled(
 const Icon: FunctionComponent<IComponentProps> = (props) => {
 	// Destructure props
 	const {
-		name = 'ArrowRight',
+		name,
 		color = brand.text,
 		height = 30,
 		width = 30,
@@ -56,6 +56,7 @@ const Icon: FunctionComponent<IComponentProps> = (props) => {
 		...rest
 	} = props;
 
+	if (!name) return <></>;
 	const IconToShow = icons[name];
 	return (
 		<StyledDiv

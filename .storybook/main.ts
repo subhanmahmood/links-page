@@ -6,6 +6,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-links',
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
+		'@chakra-ui/storybook-addon',
 	],
 	framework: {
 		name: '@storybook/nextjs',
@@ -13,6 +14,9 @@ const config: StorybookConfig = {
 	},
 	docs: {
 		autodocs: 'tag',
+	},
+	features: {
+		emotionAlias: false,
 	},
 	webpackFinal: async (config, { configType }) => {
 		if (!config.resolve) return {};
